@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    max-width: 4000px;
+    margin: auto;
+}
+
+.wrapper {
+    display: grid;
+    position: relative;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "about about about"
+        "info des des"
+        "sk-head sk-head sk-head"
+        "skill-1 skill-2 skill-3"
+        "portfolio portfolio portfolio"
+        "photo-1 photo-2 photo-3"
+        "photo-4 photo-5 photo-6"
+        "contact contact contact"
+        "contact-text contact-form contact-form";
+    font-size: 1.2em;
+    margin: 20px 50px;
+    padding: 20px;
+    ;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+nav {
+    grid-area: nav;
+    justify-self: end;
+}
+
+nav a {
+    position: relative;
+    display: inline-block;
+    margin: 10px 0 10px 50px;
+    padding: 5px 0;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: none;
+    text-shadow: 0 0 3px rgba(107, 74, 102, 0.5);
+    transition: color 1s ease-in-out;
+}
+
+nav a::before,
+nav a::after {
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: #42065D;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+nav a::before {
+    top: 0;
+    transform: translateY(-10px);
+}
+
+nav a::after {
+    bottom: 0;
+    transform: translateY(10px);
+}
+
+nav a:hover {
+    color: #42065D;
+}
+
+nav a:hover::before,
+nav a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#head {
+    grid-area: header;
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#head::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    background-image: url(jpg/02.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 75%;
+    filter: grayscale(1) blur(3px);
+    z-index: -1;
+}
+
+.main-head {
+    margin: 130px auto;
+    padding: 0 20px;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    height: 50px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #42065D;
+    text-shadow: 0.5px 0.5px 2px white;
+}
+
+.main-head::before {
+    content: '{';
+    position: absolute;
+    left: 0;
+    color: #CB04A5;
+    animation-name: opacity;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.main-head::after {
+    content: '}';
+    position: absolute;
+    color: #CB04A5;
+    padding-left: 10px;
+    animation-name: opacity;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes opacity {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.greeting {
+    display: inline-block;
+    float: left;
+    margin: 0;
+}
+
+.list {
+    display: inline-block;
+    margin: 0;
+    padding-left: 15px;
+    list-style: none;
+    line-height: 1.3;
+    animation-name: hello;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hello {
+
+    0%,
+    48%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    52%,
+    96% {
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+.buttons {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.buttons p {
+    position: relative;
+    top: 40px;
+    font-size: 1.5em;
+}
+
+.buttons form {
+    padding-top: 45px;
+}
+
+button {
+    padding: 5px 15px;
+    background: #fff;
+    color: #9C42C4;
+    border: 2px solid #9C42C4;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+button:hover {
+    background: #9C42C4;
+    color: white;
+}
+
+.buttons button:first-of-type {
+    margin-right: 50px;
+}
+
+.about {
+    grid-area: about;
+}
+
+.info {
+    grid-area: info;
+    align-self: center;
+}
+
+.info div {
+    font-size: 0.85em;
+}
+
+div.photo-me {
+    width: 25%;
+    float: left;
+    position: relative;
+    top: 0;
+}
+
+div.basic-info {
+    width: 75%;
+    float: left;
+}
+
+.photo-me img {
+    width: 90%;
+    height: auto;
+}
+
+.basic-info p:first-of-type {
+    margin-top: 0;
+}
+
+.basic-info p:last-of-type {
+    margin-bottom: 0;
+}
+
+.basic-info span {
+    color: #42065D
+}
+
+.description {
+    grid-area: des;
+    align-self: center;
+    line-height: 1.5;
+    border-left: 2px dotted #42065D;
+    padding-left: 10px;
+}
+
+.skills-head {
+    grid-area: sk-head;
+}
+
+.skills {
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.svg {
+    width: auto;
+    height: 100px;
+}
+
+.svg img {
+    width: auto;
+    height: 100%;
+}
+
+.skills p:first-of-type {
+    color: #42065D;
+    font-size: 1.3em;
+}
+
+.skill-1 {
+    grid-area: skill-1;
+    position: relative;
+}
+
+.skill-2 {
+    grid-area: skill-2;
+    position: relative;
+}
+
+.skill-3 {
+    grid-area: skill-3;
+    position: relative;
+}
+
+.skill-1::after,
+.skill-2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-right: 2px dotted #42065D;
+}
+
+#portfolio {
+    grid-area: portfolio;
+}
+
+.photos {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 33vh;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.photos h2 {
+    opacity: 0;
+    transform: scale(3);
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+    margin: 20px 15px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.photos p {
+    opacity: 0;
+    transform: scale(3);
+    padding: 0 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cover {
+    background-color: rgba(204, 170, 255, 0.5);
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in;
+}
+
+.photos:hover .cover {
+    opacity: 1;
+}
+
+.photos:hover h2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photos:hover p {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photo-1 {
+    grid-area: photo-1;
+    background-image: url('jpg/01.jpg');
+}
+
+.photo-2 {
+    grid-area: photo-2;
+    background-image: url('jpg/15.jpg');
+}
+
+.photo-3 {
+    grid-area: photo-3;
+    background-image: url('jpg/03.jpg');
+}
+
+.photo-4 {
+    grid-area: photo-4;
+    background-image: url('jpg/05.jpg');
+}
+
+.photo-5 {
+    grid-area: photo-5;
+    background-image: url('jpg/08.jpg');
+}
+
+.photo-6 {
+    grid-area: photo-6;
+    background-image: url('jpg/10.jpg');
+}
+
+#contact {
+    grid-area: contact;
+    position: relative;
+}
+
+.text {
+    grid-area: contact-text;
+    position: relative;
+    background: linear-gradient(180deg, rgb(66, 6, 93), rgb(156, 66, 196));
+    color: white;
+    width: 80%;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.text::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 11px 0 11px 20px;
+    border-color: transparent rgb(66, 6, 93);
+    top: 15px;
+    left: 100%;
+}
+
+.svg-icon.envelope {
+    height: 30px;
+    padding: 15px;
+}
+
+.first-text {
+    padding: 10px 15px;
+}
+
+.last-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px 15px;
+}
+
+.svg-icon {
+    width: auto;
+    height: 20px;
+    padding: 0;
+}
+
+.svg-icon:nth-of-type(n+2) {
+    padding-left: 15px
+}
+
+.svg-icon img {
+    width: auto;
+    height: 100%;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+}
+
+.form {
+    grid-area: contact-form;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    position: relative;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.form input,
+textarea {
+    margin: 10px 0;
+}
+
+.form button {
+    width: 70px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+input,
+textarea {
+    font-family: 'Ubuntu', sans-serif;
+    ;
+}
+
+@media (max-width: 681px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "header"
+            "about"
+            "info"
+            "des"
+            "sk-head"
+            "skill-1"
+            "skill-2"
+            "skill-3"
+            "portfolio"
+            "photo-1"
+            "photo-2"
+            "photo-3"
+            "photo-4"
+            "photo-5"
+            "photo-6"
+            "contact"
+            "contact-text"
+            "contact-form";
+        font-size: 0.8em;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 1.3em;
+    }
+
+    .main-head {
+        width: 75%;
+        height: 25px;
+        font-size: 1.8em;
+    }
+
+    .buttons button:first-of-type {
+        margin-right: 10px;
+    }
+
+    .info div,
+    .description {
+        font-size: 1.15em;
+        border: none;
+    }
+
+    .text {
+        font-size: 0.9em;
+    }
+
+    .last-text,
+    .first-text,
+    .icons {
+        position: relative;
+    }
+
+    .form {
+        font-size: 1.5em;
+    }
+
+    .skill-1::after,
+    .skill-2::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+@media (min-width: 682px) and (max-width: 1000px) {
+
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nav nav"
+            "header header"
+            "about about"
+            "info des"
+            "sk-head sk-head"
+            "skill-1 skill-2"
+            "skill-3 skill-3"
+            "portfolio portfolio"
+            "photo-1 photo-2"
+            "photo-3 photo-4"
+            "photo-5 photo-6"
+            "contact contact"
+            "contact-text contact-form";
+    }
+
+    nav a {
+        font-size: 1.1em;
+    }
+
+    .main-head {
+        width: 60%;
+        height: 40px;
+        font-size: 2em;
+    }
+
+    .info div,
+    .description {
+        font-size: 0.8em;
+    }
+
+    .photos {
+        height: 40vh;
+    }
+
+    .text {
+        font-size: 0.8em;
+    }
+
+    .skill-2::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
